@@ -53,7 +53,7 @@ const Blog = () => {
               <span>Content</span>
             </Link>
             <Link
-              // to={`author`}
+              to={`author`}
               onClick={() => setTabIndex(1)}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2
                ${TabIndex === 1 ? 'border border-b-0' : 'border-b' }
