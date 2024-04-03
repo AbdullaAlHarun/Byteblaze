@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const Blog = () => {
-  const [TabIndex, setTabIndex] = useState(0)
+  const [TabIndex, setTabIndex] = useState(0);
   const blog = useLoaderData();
   const {
     comments_count,
@@ -10,6 +10,7 @@ const Blog = () => {
     reading_time_minutes,
     public_reactions_count,
     published_at,
+    tags,
   } = blog;
   return (
     <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
@@ -35,7 +36,7 @@ const Blog = () => {
               // to='/'
               onClick={() => setTabIndex(0)}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2
-              ${TabIndex === 0 ? 'border border-b-0' : 'border-b' }
+              ${TabIndex === 0 ? "border border-b-0" : "border-b"}
                rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
             >
               <svg
@@ -56,7 +57,7 @@ const Blog = () => {
               to={`author`}
               onClick={() => setTabIndex(1)}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2
-               ${TabIndex === 1 ? 'border border-b-0' : 'border-b' }
+               ${TabIndex === 1 ? "border border-b-0" : "border-b"}
                 rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
             >
               <svg
@@ -74,57 +75,12 @@ const Blog = () => {
               </svg>
               <span>Author</span>
             </Link>
-           
           </div>
           {/* Tabs End  */}
         </div>
-       <Outlet></Outlet>
+        <Outlet></Outlet>
       </article>
-      <div>
-        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
-          >
-            #MambaUI
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
-          >
-            #TailwindCSS
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
-          >
-            #Angular
-          </a>
-        </div>
-        <div className="space-y-2">
-          <h4 className="text-lg font-semibold">Related posts</h4>
-          <ul className="ml-4 space-y-1 list-disc">
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Nunc id magna mollis
-              </a>
-            </li>
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Duis molestie, neque eget pretium lobortis
-              </a>
-            </li>
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Mauris nec urna volutpat, aliquam lectus sit amet
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+     
     </div>
   );
 };

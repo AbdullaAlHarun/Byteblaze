@@ -29,7 +29,7 @@ const BlogCart = ({blog}) => {
                 {description}
               </p>
             </div>
-          </Link>
+        </Link>
     );
 };
 

@@ -1,9 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 
 
 const Author = () => {
+    const blog = useLoaderData();
     return (
         <div>
-            <h1>I am Author</h1>
+            <h1>{blog.user.name}</h1>
         </div>
     );
 };
